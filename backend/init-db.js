@@ -35,7 +35,7 @@ function initDB() {
 
 module.exports = initDB;
 
-// If run directly (e.g., via prestart), execute the function
+// If run directly, execute the function
 if (require.main === module) {
   initDB().then(() => process.exit(0)).catch(err => {
     console.error(err);
