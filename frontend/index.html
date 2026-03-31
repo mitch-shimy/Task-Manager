@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Manager</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="terminal">
+        <!-- header -->
+        <div class="terminal-header">
+            <div class="terminal-title">
+                <h1>TASK MANAGER<span>SHIMY</span></h1>
+            </div>
+        </div>
+
+        <div class="add-panel">
+            <div class="report-loading"></div>
+            <div class="report-error"></div>
+            <div class="add-form">
+                <div class="form-field" style="flex: 2;">
+                    <div class="form-label"><i class="fas fa-pen"></i> TASK TITLE</div>
+                    <input type="text" class="terminal-input" id="task-input" placeholder="> ENTER TASK TITLE..." autocomplete="off">
+                </div>
+                <div class="form-field">
+                    <div class="form-label"><i class="fas fa-flag"></i> PRIORITY LEVEL</div>
+                    <select class="priority-select" id="priority-select">
+                        <option value="high">HIGH</option>
+                        <option value="medium" selected>MEDIUM</option>
+                        <option value="low">LOW</option>
+                    </select>
+                </div>
+                <div class="form-field">
+                    <div class="form-label"><i class="far fa-calendar-alt"></i> DUE DATE</div>
+                    <div class="due-date-group">
+                        <input type="date" class="date-input" id="due-date-input">
+                        <div class="date-quick-btns">
+                            <button type="button" class="quick-date-btn" data-days="0">TODAY</button>
+                            <button type="button" class="quick-date-btn" data-days="1">TOMORROW</button>
+                        </div>
+                    </div>
+                </div>
+                <button class="terminal-btn" id="add-task-btn">
+                    <i class="fas fa-plus"></i> CREATE
+                </button>
+            </div>
+        </div>
+
+        <div class="board">
+            <!-- PENDING column -->
+            <div class="column" id="pending">
+                <div class="column-header">
+                    <div class="column-title">
+                        <div class="status-led"></div>
+                        <h2>PENDING.<span>inbox</span></h2>
+                    </div>
+                    <div class="count-badge" id="pending-count">0</div>
+                </div>
+                <div class="task-list" id="pending-list">
+                    <!-- tasks -->
+                </div>
+            </div>
+
+            <!-- IN PROGRESS column -->
+            <div class="column" id="progress">
+                <div class="column-header">
+                    <div class="column-title">
+                        <div class="status-led"></div>
+                        <h2>PROGRESS.<span>active</span></h2>
+                    </div>
+                    <div class="count-badge" id="progress-count">0</div>
+                </div>
+                <div class="task-list" id="progress-list">
+                    <div class="empty-state" style="display: none;">
+                        <i class="fas fa-terminal"></i>
+                        NO ACTIVE TASKS
+                    </div>
+                </div>
+            </div>
+
+            <!-- DONE column -->
+            <div class="column" id="done">
+                <div class="column-header">
+                    <div class="column-title">
+                        <div class="status-led"></div>
+                        <h2>DONE.<span>archive</span></h2>
+                    </div>
+                    <div class="count-badge" id="done-count">0</div>
+                </div>
+                <div class="task-list" id="done-list">
+                    <div class="empty-state" style="display: none;">
+                        <i class="fas fa-archive"></i>
+                        NO COMPLETED TASKS
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- footer -->
+        <div class="terminal-footer">
+            <div class="footer-stats">
+                <div><i class="fas fa-tasks"></i> TOTAL: <span id="total-tasks">0</span></div>
+                <div id="sort"><i class="fas fa-clock"></i> SORT: OLDEST FIRST</div>
+                <div id="report-btn"><i class="fas fa-chart-bar"></i> REPORT</div>
+            </div>
+            <div class="cursor-blink">_</div>
+        </div>
+    </div>
+
+    <!-- Report Modal -->
+    <div id="report-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3><i class="fas fa-chart-bar"></i> TASK REPORT</h3>
+                <button class="modal-close" id="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="report-date-selector">
+                    <input type="date" id="report-date" value="">
+                    <button id="fetch-report">FETCH</button>
+                </div>
+                <div id="report-content">
+                    <div class="report-loading">Select a date to view report</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js">
+
+    </script>
+</body>
+</html>
