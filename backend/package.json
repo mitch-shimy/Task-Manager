@@ -10,7 +10,7 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "db:init": "sqlite3 tasks.db < backend/dump.sql",
+    "prestart": "node init-db.js",
     "start": "node server.js"
   },
   "keywords": [],
