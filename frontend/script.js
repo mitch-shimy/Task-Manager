@@ -1,4 +1,4 @@
-const BASE_URL = "http://localhost:3000";
+const BASE_URL = "https://task-manager-production-b1fd.up.railway.app" || "http://localhost:3000";
 const AppState = {
     tasks: [],
     loading: true,
