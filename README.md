@@ -70,6 +70,30 @@ Task Management/
 
    The server will start on `http://localhost:3000` (or the port specified in `.env`).
 
+### Testing with Sample Data
+
+For testing purposes, you can prefill the database with sample tasks from `backend/dump.sql`:
+
+1. Set the environment variable in `.env`:
+   ```
+   PREFILL_DB=true
+   ```
+
+2. Start the server:
+   ```bash
+   npm start
+   ```
+
+   This will populate the database with sample tasks if `tasks.db` doesn't exist.
+
+3. To disable prefill for normal operations, set:
+   ```
+   PREFILL_DB=false
+   ```
+   or remove the line.
+
+**Note:** Prefill only happens if the database file doesn't exist. On subsequent starts, it skips prefill to preserve your data.
+
 ### Frontend Setup
 
 1. Open the `frontend/index.html` file in your web browser.
