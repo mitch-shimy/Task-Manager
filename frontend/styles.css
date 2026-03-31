@@ -350,7 +350,7 @@ body {
 
 .task-card.overdue {
     border-left: 4px solid #000;
-    background: #fffaf0;
+    background: #ffe6e6;
 }
 
 .priority-badge {
