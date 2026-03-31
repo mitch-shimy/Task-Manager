@@ -20,4 +20,5 @@ INSERT INTO tasks VALUES('3db5d3d8-65e6-4b82-a09d-92ef554e0dcf','Implement error
 INSERT INTO tasks VALUES('d296a2a9-b2a2-4e15-95a7-8817d772edba','Optimize database queries','in_progress','medium','2026-04-06','2026-03-31T00:17:06.591Z','2026-03-31T04:45:00.000Z');
 INSERT INTO tasks VALUES('7dc58a5c-9a7f-4552-8742-a684312a7573','Add logging system','pending','low','2026-04-07','2026-03-31T00:17:35.807Z',NULL);
 INSERT INTO tasks VALUES('75359b61-fbf5-4062-b085-aadc8db2fadb','Deploy app to server','done','high','2026-04-01','2026-03-31T01:27:31.000Z','2026-03-31T06:00:00.000Z');
+INSERT INTO tasks VALUES('75739b61-fbf5-4062-b085-aa3c8ds2fadb','Do pending tasks','pending','high','2026-03-29','2026-03-28T01:27:31.000Z',NULL);
 COMMIT;
