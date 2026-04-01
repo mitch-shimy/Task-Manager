@@ -9,7 +9,7 @@ const getTasks = async (req, res) => {
             message: tasks.length === 0 ? "No tasks found" : "Tasks fetched successfully",
             tasks
         });
-    }catch(error){
+    }catch(err){
         return res.status(500).json({ message: err.message });
     }
 };
@@ -23,7 +23,7 @@ const addTask = async (req, res) => {
         message: "Task created successfully",
         newTask
         });
-    }catch(error){
+    }catch(err){
         if (err.message === "Due date cannot be in the past" || err.message === "Invalid priority value") {
             return res.status(400).json({ message: err.message });
         }
@@ -40,7 +40,7 @@ const deleteTask = async (req, res) => {
         deleted
         });
 
-    }catch(error){
+    }catch(err){
         if (err.message === "Task not found") {
             return res.status(404).json({ message: err.message });
         }
